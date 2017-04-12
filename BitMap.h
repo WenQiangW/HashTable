@@ -32,6 +32,7 @@ public:
 			return true;
 		return false;
 	}
+	
 private:
 	vector<int> _table;
 };
