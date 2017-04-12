@@ -1,5 +1,4 @@
 #pragma once
-
 #include<iostream>
 #include<vector>
 using namespace std;
@@ -15,19 +14,19 @@ public:
 	}
 	void Set(int data)
 	{
-		size_t ByteNo = data >> 5; //Ïàµ±ÓÚ³ýÒÔ32
+		size_t ByteNo = data >> 5; //ç›¸å½“äºŽé™¤ä»¥32
 		size_t BitNo = data % 32;
-		_table[ByteNo] |= (1 << BitNo); //ÖÃ1
+		_table[ByteNo] |= (1 << BitNo); //ç½®1
 	}
 	void ReSet(int data)
 	{
-		size_t ByteNo = data >> 5; //Ïàµ±ÓÚ³ýÒÔ32
+		size_t ByteNo = data >> 5; //ç›¸å½“äºŽé™¤ä»¥32
 		size_t BitNo = data % 32;
-		_table[ByteNo] &= ~(1 << BitNo); //ÖÃ0
+		_table[ByteNo] &= ~(1 << BitNo); //ç½®0
 	}
 	bool Test(int data)
 	{
-		size_t ByteNo = data >> 5; //Ïàµ±ÓÚ³ýÒÔ32
+		size_t ByteNo = data >> 5; //ç›¸å½“äºŽé™¤ä»¥32
 		size_t BitNo = data % 32;
 		if (_table[ByteNo] & (1 << BitNo))
 			return true;
