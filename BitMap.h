@@ -37,6 +37,7 @@ private:
 	vector<int> _table;
 };
 
+//测试函数
 void Test()
 {
 	BitMap bm(100);
