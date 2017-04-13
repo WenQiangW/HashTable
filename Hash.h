@@ -3,6 +3,7 @@
 #include<iostream>
 using namespace std;
 
+
 //线性探测
 enum State
 {
