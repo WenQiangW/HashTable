@@ -6,7 +6,8 @@
 #include"common.h"
 using namespace std;
 
-//¶ş´ÎÌ½²â
+
+//äºŒæ¬¡æ¢æµ‹
 enum State
 {
 	EMPTY,
@@ -24,7 +25,7 @@ enum State
 //	}
 //};
 //
-//static size_t BKDRHash(const char * str) //×Ö·û´®×ª³ÉÕûÊı
+//static size_t BKDRHash(const char * str) //å­—ç¬¦ä¸²è½¬æˆæ•´æ•°
 //{
 //	unsigned int seed = 131; // 31 131 1313 13131 131313
 //	unsigned int hash = 0;
@@ -35,7 +36,7 @@ enum State
 //	return (hash & 0x7FFFFFFF);
 //}
 //
-////ÌØÀı»¯
+////ç‰¹ä¾‹åŒ–
 //template<>
 //class HashFunDef<string>
 //{
@@ -51,7 +52,7 @@ template<class K, class V, class Fun = HashFunDef<K>>
 class HashTable
 {
 public:
-	// ¶¯Ì¬--ÖÊÊı
+	// åŠ¨æ€--è´¨æ•°
 	HashTable(size_t capacity = 10)
 		: _capacity(capacity)
 		, _size(0)
@@ -89,7 +90,7 @@ public:
 	bool Insert(const K& key, const V& value)
 	{
 		CheckCapacity();
-		// ÕÒ²åÈëÎ»ÖÃ
+		// æ‰¾æ’å…¥ä½ç½®
 		size_t hashIdx = HashFun1(key);
 		size_t i = 1;
 		while (_state[hashIdx] == EXIST)// 
@@ -107,17 +108,17 @@ public:
 		return true;
 	}
 
-	// ÔªËØ´æÔÚ-->
-	// ²»´æÔÚ--> DELETE
+	// å…ƒç´ å­˜åœ¨-->
+	// ä¸å­˜åœ¨--> DELETE
 	bool Find(const K& key, size_t& index)
 	{
 		size_t Hashinx = HashFun1(key);
 		index = Hashinx;
 
 		size_t i = 1;
-		while (_state[index] != EMPTY)//DETE ´æÔÚ
+		while (_state[index] != EMPTY)//DETE å­˜åœ¨
 		{
-			// ´æÔÚ
+			// å­˜åœ¨
 			if (_state[index] == EXIST&& _hashTable[index].first == key)
 				return true;
 
@@ -159,11 +160,11 @@ private:
 	int HashFun1(const K& key)
 	{
 		return Fun()(key) % _capacity;
-		//return key%_capacity;//10 11 ÖÊÊı  a>=0.6
+		//return key%_capacity;//10 11 è´¨æ•°  a>=0.6
 	}
 
 	// hash(i) = hash(0) + i^2; 
-	// hash(i-1) = hash(0) +(i-1)^2;  Á½¸öÏà¼õ hash(i) = hash(i-1) +2*i-1;
+	// hash(i-1) = hash(0) +(i-1)^2;  ä¸¤ä¸ªç›¸å‡ hash(i) = hash(i-1) +2*i-1;
 	int HashFun2(size_t prevHashIdx, size_t i)
 	{
 		return (prevHashIdx + (i << 1) - 1) % _capacity;
