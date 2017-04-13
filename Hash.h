@@ -3,8 +3,7 @@
 #include<iostream>
 using namespace std;
 
-
-//ÏßĞÔÌ½²â
+//çº¿æ€§æ¢æµ‹
 enum State
 {
 	EMPTY,
@@ -25,10 +24,10 @@ public:
 		memset(_state, EMPTY, sizeof(_state)*_capacity);
 	}
 	bool Insert(const T& key)
-		// Ê×ÏÈÅĞ¶ÏÊÇ·ñÎªÂúÁË¿ÉÒÔ²åÈë
-		// ÔÙÅĞ¶ÏÊÇ·ñ´æÔÚ£ºÊÇ·ñÎªkeyÖµ
-		//Èç¹ûÎªkeyÖµµÄ»°£¬·µ»Øtrue 
-		//Èç¹û²»ÎªkeyÖµµÄ»°£¬½Ó×ÅÏòºó²éÕÒ£ºÖ±µ½Óöµ½Îª¿ÕµÄÎ»ÖÃ»òÕßÉ¾³ı È»ºóÖ±½Ó²åÈë
+		// é¦–å…ˆåˆ¤æ–­æ˜¯å¦ä¸ºæ»¡äº†å¯ä»¥æ’å…¥
+		// å†åˆ¤æ–­æ˜¯å¦å­˜åœ¨ï¼šæ˜¯å¦ä¸ºkeyå€¼
+		//å¦‚æœä¸ºkeyå€¼çš„è¯ï¼Œè¿”å›true 
+		//å¦‚æœä¸ä¸ºkeyå€¼çš„è¯ï¼Œæ¥ç€å‘åæŸ¥æ‰¾ï¼šç›´åˆ°é‡åˆ°ä¸ºç©ºçš„ä½ç½®æˆ–è€…åˆ é™¤ ç„¶åç›´æ¥æ’å…¥
 	{
 		if (_size >= _capacity)
 			return false;
@@ -47,12 +46,12 @@ public:
 		return true;
 	}
 	bool Find(const T& key, size_t& hashIdx)
-		//hashIdxÏàµ±ÓÚ×÷Îª·µ»ØÖµ·µ»Ø
+		//hashIdxç›¸å½“äºä½œä¸ºè¿”å›å€¼è¿”å›
 	{
 		size_t index = HashFuncation(key);
-		size_t startIdx = index;//±ê¼ÇÆğÊ¼Î»ÖÃ£¬·ÀÖ¹ÕÒÒ»È¦£¬ÏİÈëËÀÑ­»·
+		size_t startIdx = index;//æ ‡è®°èµ·å§‹ä½ç½®ï¼Œé˜²æ­¢æ‰¾ä¸€åœˆï¼Œé™·å…¥æ­»å¾ªç¯
 		while (_state[index] != EMPTY)
-			//ÕâÀïÑ­»·Ìõ¼ş²»ÄÜÊÇ ÅĞ¶ÏÊÇ·ñ´æÔÚ£¬ÒòÎª»¹ÓĞdelete×´Ì¬£¬Èç¹ûÓöµ½delete¾ÍÌø³öÑ­»·£¬deleteºóÃæµÄÔªËØ¾ÍÃ»²éÕÒ
+			//è¿™é‡Œå¾ªç¯æ¡ä»¶ä¸èƒ½æ˜¯ åˆ¤æ–­æ˜¯å¦å­˜åœ¨ï¼Œå› ä¸ºè¿˜æœ‰deleteçŠ¶æ€ï¼Œå¦‚æœé‡åˆ°deleteå°±è·³å‡ºå¾ªç¯ï¼Œdeleteåé¢çš„å…ƒç´ å°±æ²¡æŸ¥æ‰¾
 		{
 			if (_hashTable[index] == key && _state[index] == EXIST)
 			{
@@ -61,13 +60,13 @@ public:
 			}
 			index++;
 			index %= _capacity;
-			if (index == startIdx) //ÕÒÁËÒ»È¦ÁË
+			if (index == startIdx) //æ‰¾äº†ä¸€åœˆäº†
 				break;
 		}
 		return false;
 	}
 	bool Remove(const T& key)
-		//²éÕÒµ±Ç°indexÊÇ·ñÎªkeyÖµ£¬Èç¹û²»ÊÇÏòºó²éÕÒ
+		//æŸ¥æ‰¾å½“å‰indexæ˜¯å¦ä¸ºkeyå€¼ï¼Œå¦‚æœä¸æ˜¯å‘åæŸ¥æ‰¾
 	{
 		size_t index = 0;
 		if (Find(key, index))
