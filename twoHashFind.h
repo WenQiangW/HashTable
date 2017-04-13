@@ -16,6 +16,7 @@ enum State
 	DELETE,
 };
 
+
 //放到了comm.h中
 //template<class K>
 //class HashFunDef
