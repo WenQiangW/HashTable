@@ -49,6 +49,7 @@ enum State
 //};
 
 
+
 template<class K, class V, class Fun = HashFunDef<K>>
 class HashTable
 {
