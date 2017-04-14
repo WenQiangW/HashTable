@@ -7,6 +7,7 @@
 #include"common.h"
 using namespace std;
 
+
 template<class K, class V>
 struct HashTableNode
 {
