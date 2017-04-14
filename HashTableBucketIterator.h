@@ -18,6 +18,7 @@ struct HashTableNode
 	HashTableNode<K, V>* _next;
 	pair<K, V> _kv;
 };
+
 template<class K, class V, class _HashFun = HashFunDef<K>>
 class HashTableBucket;
 
