@@ -3,7 +3,8 @@
 #include<iostream>
 #include<string>
 using namespace std;
-//»ñÈ¡ÏÂ¸öËØÊı
+
+//è·å–ä¸‹ä¸ªç´ æ•°
 size_t GetNextPrim(size_t prev)//prev = 10
 {
 	const int _PrimeSize = 28;
@@ -27,7 +28,7 @@ size_t GetNextPrim(size_t prev)//prev = 10
 	return -1;
 }
 
-//¹şÏ£º¯Êı
+//å“ˆå¸Œå‡½æ•°
 template<class K>
 class HashFunDef
 {
@@ -38,7 +39,7 @@ public:
 	}
 };
 
-//string×ª»¯ÎªÊı×Ö
+//stringè½¬åŒ–ä¸ºæ•°å­—
 static size_t BKDRHash(const char * str)
 {
 	unsigned int seed = 131; // 31 131 1313 13131 131313
