@@ -8,6 +8,7 @@
 #include"common.h"
 using namespace std;
 
+
 /*
 //没有实现string
 template<class K,class V>
