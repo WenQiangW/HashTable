@@ -87,7 +87,6 @@ public:
 				else
 				{
 					prev->_next = pCur->_next;
-
 				}
 				delete pCur;
 				--_size;
