@@ -89,7 +89,7 @@ public:
 					prev->_next = pCur->_next;
 
 				}
-					delete pCur;
+				delete pCur;
 					--_size;
 					return true;
 			}
