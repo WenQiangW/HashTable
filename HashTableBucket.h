@@ -88,7 +88,10 @@ public:
 				{
 					prev->_next = pCur->_next;
 
-				}				
+				}
+									delete pCur;
+					--_size;
+					return true;
 			}
 			prev = pCur;
 			pCur = pCur->_next;
