@@ -219,7 +219,6 @@ public:
 	}
 
 	/*HashTableBucket(HashTableBucket<K, V>& ht);
-	HashTableBucket<K, V>& operator=(HashTableBucket<K, V>& ht);*/
 
 	bool Insert(const pair<K, V>& kv)
 	{
