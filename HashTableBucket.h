@@ -91,7 +91,7 @@ public:
 				}
 				delete pCur;
 				--_size;
-					return true;
+				return true;
 			}
 			prev = pCur;
 			pCur = pCur->_next;
