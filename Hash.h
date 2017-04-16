@@ -12,6 +12,7 @@ enum State
 	DELETE
 };
 
+
 template<class T>
 class HashTable
 {
