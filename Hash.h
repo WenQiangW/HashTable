@@ -23,7 +23,6 @@ public:
 		_state = new State[_capacity];
 		memset(_state, EMPTY, sizeof(_state)*_capacity);
 	}
-	
 	bool Insert(const T& key)
 		// 首先判断是否为满了可以插入
 		// 再判断是否存在：是否为key值
