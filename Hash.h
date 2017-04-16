@@ -47,6 +47,7 @@ public:
 		_size++;
 		return true;
 	}
+	
 	bool Find(const T& key, size_t& hashIdx)
 		//hashIdx相当于作为返回值返回
 	{
