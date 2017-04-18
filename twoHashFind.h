@@ -9,7 +9,6 @@ using namespace std;
 
 
 
-
 //二次探测
 enum State
 {
