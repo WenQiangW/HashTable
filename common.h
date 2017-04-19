@@ -6,6 +6,7 @@ using namespace std;
 
 
 
+
 //获取下个素数
 size_t GetNextPrim(size_t prev)//prev = 10
 {
